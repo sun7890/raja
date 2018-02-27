@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<form name="myForm" action="/action_page.php"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+
+<p>Enter a number id:</p>
+<input id="id1" type="number" min="100" max="300" required>
+
+<p id="demo"></p>
+
+
+<p>Enter a  phone number:</p>
+<input name="name1" type="text" min="11" max="15" required>
+<button onclick="myFunction()">OK</button>
+<p phone number="demo"></p>
+
+<p>Enter a address:</p>
+<input address="Adres1" type="text" max="1000">
+<button onclick="myFunction()">OK</button>
+<p address="demo"></p>
+
+<script>
+function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (!inpObj.checkValidity()) {
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    } else {
+        document.getElementById("demo").innerHTML = "Input OK";
+    } 
+} 
+</script>
+
+
+
+
+<script>
+function myFunction() {
+    var txt = "";
+    if (document.getElementById("Adres1").validity.rangeOverflow) {
+        txt = "Value too large";
+    } else {
+        txt = "Input OK";
+    } 
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+
+
+
+</body>
+</html>
